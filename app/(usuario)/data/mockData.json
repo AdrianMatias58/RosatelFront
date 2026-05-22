@@ -1,0 +1,110 @@
+{
+    "tienda_info": {
+        "nombre": "Rosatel Clon",
+        "descripcion_corta": "Regala momentos, envía flores.",
+        "descripcion_larga": "Somos la plataforma líder en el envío de arreglos florales, regalos y detalles diseñados para conectar corazones. Nos especializamos en entregas programadas con la máxima frescura y puntualidad en todo el país.",
+        "cobertura": "Envíos disponibles en Lima Metropolitana y Callao.",
+        "politica_envio": "Garantizamos la entrega en el rango horario seleccionado por el cliente."
+    },
+    "categorias": [
+        {
+            "id": 1,
+            "nombreCategoria": "Rosas"
+        },
+        {
+            "id": 2,
+            "nombreCategoria": "Tulipanes"
+        },
+        {
+            "id": 3,
+            "nombreCategoria": "Peluches"
+        },
+        {
+            "id": 4,
+            "nombreCategoria": "Globos"
+        }
+    ],
+    "productos": [
+        {
+            "id": 1,
+            "id_categoria": 1,
+            "nombre": "Caja de 12 Rosas Rojas Elegantes",
+            "precio": 149.00,
+            "descripcion": "Hermoso arreglo de 12 rosas rojas seleccionadas de tallo largo, presentadas en nuestra exclusiva caja de diseño premium. Incluye tarjeta para dedicatoria.",
+            "stock": 45,
+            "imagen_url": "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=500"
+        },
+        {
+            "id": 2,
+            "id_categoria": 2,
+            "nombre": "Florero con 10 Tulipanes Amarillos",
+            "precio": 189.00,
+            "descripcion": "Elegante florero de vidrio importado que contiene 10 tulipanes amarillos frescos de la más alta calidad, acompañados de follaje fino.",
+            "stock": 20,
+            "imagen_url": "https://images.unsplash.com/photo-1520763185298-1b434c919102?w=500"
+        },
+        {
+            "id": 3,
+            "id_categoria": 3,
+            "nombre": "Oso de Peluche Kodi con Lazo",
+            "precio": 79.00,
+            "descripcion": "Suave oso de peluche gigante color marrón claro con un lazo satinado rojo. El compañero ideal para complementar cualquier ramo.",
+            "stock": 60,
+            "imagen_url": "https://images.unsplash.com/photo-1559251606-c623743a6d76?w=500"
+        }
+    ],
+    "paquetes_promociones": [
+        {
+            "id": 1,
+            "nombre": "Combo Amor Perfecto (Rosas + Peluche)",
+            "descripcion": "La combinación ideal para aniversarios. Incluye la Caja de 12 Rosas Rojas y el Oso de Peluche Kodi por un precio especial de campaña.",
+            "precio_combo": 199.00,
+            "imagen_url": "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500",
+            "activo": 1,
+            "fecha_expiracion": "2026-12-31"
+        }
+    ],
+    "cupones_ejemplo": [
+        {
+            "id": 1,
+            "codigo": "ROSAS20",
+            "cantidadDescuento": 0.20,
+            "descripcion": "20% de descuento en la categoría de rosas",
+            "activo": 1
+        }
+    ],
+    "simulacion_usuario_logueado": {
+        "sesion_activa": true,
+        "usuario": {
+            "id": 5,
+            "id_rol": 2,
+            "correo": "alexander@correo.com"
+        },
+        "cliente": {
+            "id": 1,
+            "nombre": "Alexander",
+            "apellido": "Cipriano",
+            "telefono": "987654321"
+        },
+        "direcciones_guardadas": [
+            {
+                "id": 10,
+                "direccion": "Av. Javier Prado Este 2450, San Borja",
+                "referencia": "Frente al Museo de la Nación",
+                "codigo_postal": "15037"
+            }
+        ]
+    },
+    "opciones_checkout_frontend": {
+        "metodos_pago_permitidos": [
+            "Tarjeta",
+            "Yape",
+            "PagoEfectivo"
+        ],
+        "horarios_entrega_disponibles": [
+            "9:00 AM - 1:00 PM (Mañana)",
+            "2:00 PM - 6:00 PM (Tarde)",
+            "6:30 PM - 9:30 PM (Noche)"
+        ]
+    }
+}
