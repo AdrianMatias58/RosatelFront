@@ -21,8 +21,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white">
       {/* Top Header - Social Media & Currency */}
-      <div className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-3 md:px-5 py-3 flex items-center justify-between">
+      <div>
+        <div className="max-w-7xl mx-auto px-3 md:px-5 pt-3 pb-[3px] flex items-center justify-between">
           <div className="flex gap-4 items-center">
             <a
               href="https://www.facebook.com/rosatelperu"
@@ -94,16 +94,18 @@ export function Header() {
 
       {/* Main Header */}
       <div className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-3 md:px-5 py-4 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-3 md:px-5 pt-[3px] pb-4 flex items-center justify-between gap-4">
           {/* Left - Location */}
-          <div className="hidden md:flex items-center gap-2">
-            <button className="px-3 py-2 bg-white border border-gray-300 rounded-lg text-xs font-medium hover:border-gray-400 transition flex items-center gap-2">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              </svg>
-              PE
-            </button>
-            <span className="text-xs text-gray-700">¿A dónde envías?</span>
+          <div className="flex-1 flex items-center justify-start">
+            <div className="hidden md:flex items-center gap-2">
+              <button className="px-3 py-2 bg-white border border-gray-300 rounded-lg text-xs font-medium hover:border-gray-400 transition flex items-center gap-2">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                </svg>
+                PE
+              </button>
+              <span className="text-xs text-gray-700">¿A dónde envías?</span>
+            </div>
           </div>
 
           {/* Center - Logo */}
@@ -119,7 +121,7 @@ export function Header() {
           </Link>
 
           {/* Right - Search & Icons */}
-          <div className="flex items-center gap-2 md:gap-4 flex-1 md:flex-none">
+          <div className="flex items-center justify-end gap-2 md:gap-4 flex-1">
             {/* Search - visible on larger screens */}
             <div className="hidden md:flex flex-1 max-w-xs bg-gray-50 border border-gray-300 rounded-lg px-3 py-2">
               <input
