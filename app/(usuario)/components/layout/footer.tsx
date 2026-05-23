@@ -3,7 +3,7 @@ export function Footer() {
     <footer className="bg-gray-900 text-white">
       {/* Newsletter Section */}
       <div className="bg-gray-800 py-8">
-        <div className="max-w-7xl mx-auto px-3 md:px-5">
+        <div className="max-w-[1400px] mx-auto px-3 md:px-5">
           <div className="max-w-md">
             <h3 className="text-lg font-semibold mb-2">Suscríbete a Rosatel</h3>
             <p className="text-sm text-gray-300 mb-4">
@@ -25,7 +25,7 @@ export function Footer() {
 
       {/* Main Footer */}
       <div className="py-12">
-        <div className="max-w-7xl mx-auto px-3 md:px-5">
+        <div className="max-w-[1400px] mx-auto px-3 md:px-5">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
             {/* Column 1 - Logo & Social */}
             <div>

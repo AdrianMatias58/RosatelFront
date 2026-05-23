@@ -43,7 +43,7 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-white">
       {/* Top Header - Social Media & Currency */}
       <div>
-        <div className="max-w-7xl mx-auto px-3 md:px-5 pt-3 pb-[3px] flex items-center justify-between">
+        <div className="max-w-[1400px] mx-auto px-3 md:px-5 pt-3 pb-[3px] flex items-center justify-between">
           <div className="flex gap-4 items-center">
             <a
               href="https://www.facebook.com/rosatelperu"
@@ -122,7 +122,7 @@ export function Header() {
 
       {/* Main Header */}
       <div className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-3 md:px-5 pt-[3px] pb-4 flex items-center justify-between gap-4">
+        <div className="max-w-[1400px] mx-auto px-3 md:px-5 pt-[3px] pb-4 flex items-center justify-between gap-4">
           {/* Left - Location */}
           <div className="flex-1 flex items-center justify-start">
             <div className="hidden md:flex items-center gap-2">
@@ -202,7 +202,7 @@ export function Header() {
 
       {/* Bottom Navigation */}
       <div className="border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-3 md:px-5">
+        <div className="max-w-[1400px] mx-auto px-3 md:px-5">
           {/* Mobile Menu */}
           {mobileMenuOpen && (
             <nav className="md:hidden py-4 space-y-2">
