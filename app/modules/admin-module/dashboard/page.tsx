@@ -2,7 +2,7 @@
 
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, BarChart, Bar } from "recharts";
 
-// 1. Mock Data estructurada para los gráficos (Ventas de la semana en Rosatel)
+
 const datosVentas = [
   { name: "Lun", ingresos: 1200, ordenes: 15 },
   { name: "Mar", ingresos: 1900, ordenes: 22 },
@@ -10,13 +10,12 @@ const datosVentas = [
   { name: "Jue", ingresos: 2500, ordenes: 29 },
   { name: "Vie", ingresos: 3100, ordenes: 35 },
   { name: "Sab", ingresos: 4000, ordenes: 48 },
-  { name: "Dom", ingresos: 14250, ordenes: 184 }, // Tu cierre actual
+  { name: "Dom", ingresos: 14250, ordenes: 184 },
 ];
 
 export default function DashboardPage() {
   return (
     <div className="p-8 text-white">
-      {/* Encabezado */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">Panel de Reportes</h1>
         <p className="text-sm text-slate-400 mt-1">
@@ -24,7 +23,6 @@ export default function DashboardPage() {
         </p>
       </div>
 
-      {/* Grid de Tarjetas / KPIs (Tus métricas de ayer) */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm">
           <p className="text-sm font-medium text-slate-400">Total Ingresos Brutos</p>
@@ -44,10 +42,8 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      {/* SECCIÓN DE GRÁFICOS EN PARALELO */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
         
-        {/* Gráfico 1: Tendencia de Ingresos */}
         <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm">
           <h3 className="text-base font-semibold mb-4 text-slate-200">Curva de Ingresos Semanales (S/.)</h3>
           <div className="h-64 w-full">
@@ -68,7 +64,6 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* Gráfico 2: Volumen de Pedidos */}
         <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm">
           <h3 className="text-base font-semibold mb-4 text-slate-200">Volumen de Órdenes por Día</h3>
           <div className="h-64 w-full">
