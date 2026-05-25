@@ -1,88 +1,88 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, BarChart, Bar } from "recharts";
 
-const MOCK_METRICAS = {
-  totalVentas: 'S/. 14,250.00',
-  pedidosTotales: 184,
-  productosActivos: 42,
-  igvRecaudado: 'S/. 2,565.00'
-};
-
-const MOCK_ULTIMAS_VENTAS = [
-  { id: 'RT-10523', cliente: 'Carlos Mendoza', metodo: 'Yape', total: 150.00, estado: 'Pagado' },
-  { id: 'RT-10524', cliente: 'Ana María Rossi', metodo: 'Tarjeta', total: 280.00, estado: 'En camino' },
-  { id: 'RT-10525', cliente: 'Juan Pérez Ate', metodo: 'PagoEfectivo', total: 85.50, estado: 'Pendiente' },
-  { id: 'RT-10526', cliente: 'Sofía Benavides', metodo: 'Yape', total: 420.00, estado: 'Entregado' },
+// 1. Mock Data estructurada para los gráficos (Ventas de la semana en Rosatel)
+const datosVentas = [
+  { name: "Lun", ingresos: 1200, ordenes: 15 },
+  { name: "Mar", ingresos: 1900, ordenes: 22 },
+  { name: "Mie", ingresos: 1500, ordenes: 18 },
+  { name: "Jue", ingresos: 2500, ordenes: 29 },
+  { name: "Vie", ingresos: 3100, ordenes: 35 },
+  { name: "Sab", ingresos: 4000, ordenes: 48 },
+  { name: "Dom", ingresos: 14250, ordenes: 184 }, // Tu cierre actual
 ];
 
-export default function AdminDashboardPage() {
+export default function DashboardPage() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-6">
+    <div className="p-8 text-white">
+      {/* Encabezado */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight">Panel de Reportes</h1>
-        <p className="text-gray-400 text-sm mt-1">Monitoreo en tiempo real de ingresos y transacciones de Rosatel</p>
+        <p className="text-sm text-slate-400 mt-1">
+          Monitoreo visual y estadísticas de rendimiento en tiempo real
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
-          <p className="text-sm font-medium text-gray-400">Total Ingresos Brutos</p>
-          <p className="text-2xl font-bold text-green-400 mt-2">{MOCK_METRICAS.totalVentas}</p>
+      {/* Grid de Tarjetas / KPIs (Tus métricas de ayer) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm">
+          <p className="text-sm font-medium text-slate-400">Total Ingresos Brutos</p>
+          <p className="text-2xl font-bold text-emerald-400 mt-2">S/. 14,250.00</p>
         </div>
-        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
-          <p className="text-sm font-medium text-gray-400">Órdenes Procesadas</p>
-          <p className="text-2xl font-bold text-white mt-2">{MOCK_METRICAS.pedidosTotales}</p>
+        <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm">
+          <p className="text-sm font-medium text-slate-400">Órdenes Procesadas</p>
+          <p className="text-2xl font-bold text-white mt-2">184</p>
         </div>
-        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
-          <p className="text-sm font-medium text-gray-400">Impuestos (IGV 18%)</p>
-          <p className="text-2xl font-bold text-red-400 mt-2">{MOCK_METRICAS.igvRecaudado}</p>
+        <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm">
+          <p className="text-sm font-medium text-slate-400">Impuestos (IGV 18%)</p>
+          <p className="text-2xl font-bold text-rose-400 mt-2">S/. 2,565.00</p>
         </div>
-        <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
-          <p className="text-sm font-medium text-gray-400">Items en Catálogo</p>
-          <p className="text-2xl font-bold text-blue-400 mt-2">{MOCK_METRICAS.productosActivos}</p>
+        <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm">
+          <p className="text-sm font-medium text-slate-400">Items en Catálogo</p>
+          <p className="text-2xl font-bold text-sky-400 mt-2">42</p>
         </div>
       </div>
 
-      <div className="bg-gray-800 rounded-xl border border-gray-700 p-6">
-        <div className="mb-4">
-          <h2 className="text-xl font-bold">Últimos Pedidos Registrados</h2>
-          <p className="text-gray-400 text-xs mt-0.5">Historial reciente de transacciones en la plataforma</p>
+      {/* SECCIÓN DE GRÁFICOS EN PARALELO */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        
+        {/* Gráfico 1: Tendencia de Ingresos */}
+        <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm">
+          <h3 className="text-base font-semibold mb-4 text-slate-200">Curva de Ingresos Semanales (S/.)</h3>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={datosVentas} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                <defs>
+                  <linearGradient id="colorIngresos" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
+                    <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
+                  </linearGradient>
+                </defs>
+                <XAxis dataKey="name" stroke="#94a3b8" fontSize={12} tickLine={false} />
+                <YAxis stroke="#94a3b8" fontSize={12} tickLine={false} />
+                <Tooltip contentStyle={{ backgroundColor: "#1e293b", borderColor: "#334155", borderRadius: "8px", color: "#fff" }} />
+                <Area type="monotone" dataKey="ingresos" stroke="#10b981" strokeWidth={2} fillOpacity={1} fill="url(#colorIngresos)" />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm text-gray-300">
-            <thead className="text-xs uppercase bg-gray-700 text-gray-400">
-              <tr>
-                <th className="px-4 py-3">Código</th>
-                <th className="px-4 py-3">Cliente</th>
-                <th className="px-4 py-3">Método de Pago</th>
-                <th className="px-4 py-3">Monto Total</th>
-                <th className="px-4 py-3">Estado</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-700">
-              {MOCK_ULTIMAS_VENTAS.map((pedido) => (
-                <tr key={pedido.id} className="hover:bg-gray-700/50 transition-colors">
-                  <td className="px-4 py-3 font-mono text-red-400 font-medium">{pedido.id}</td>
-                  <td className="px-4 py-3 text-white">{pedido.cliente}</td>
-                  <td className="px-4 py-3">{pedido.metodo}</td>
-                  <td className="px-4 py-3 font-medium text-white">S/. {pedido.total.toFixed(2)}</td>
-                  <td className="px-4 py-3">
-                    <span className={`px-2 py-1 rounded-md text-xs font-semibold ${
-                      pedido.estado === 'Entregado' || pedido.estado === 'Pagado'
-                        ? 'bg-green-950 text-green-400 border border-green-800'
-                        : pedido.estado === 'En camino'
-                        ? 'bg-blue-950 text-blue-400 border border-blue-800'
-                        : 'bg-yellow-950 text-yellow-400 border border-yellow-800'
-                    }`}>
-                      {pedido.estado}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        {/* Gráfico 2: Volumen de Pedidos */}
+        <div className="bg-slate-800 p-6 rounded-xl border border-slate-700 shadow-sm">
+          <h3 className="text-base font-semibold mb-4 text-slate-200">Volumen de Órdenes por Día</h3>
+          <div className="h-64 w-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={datosVentas} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                <XAxis dataKey="name" stroke="#94a3b8" fontSize={12} tickLine={false} />
+                <YAxis stroke="#94a3b8" fontSize={12} tickLine={false} />
+                <Tooltip contentStyle={{ backgroundColor: "#1e293b", borderColor: "#334155", borderRadius: "8px", color: "#fff" }} />
+                <Bar dataKey="ordenes" fill="#ef4444" radius={[4, 4, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
+
       </div>
     </div>
   );

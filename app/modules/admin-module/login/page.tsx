@@ -1,125 +1,85 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
 
-export default function AdminLoginPage() {
-  const [isRecovering, setIsRecovering] = useState<boolean>(false);
-  
+export default function LoginPage() {
+  const router = useRouter();
+  const [correo, setCorreo] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
-
-  const handleLoginSubmit = (e: React.FormEvent) => {
+  const handleLogin = (e: FormEvent) => {
     e.preventDefault();
-    console.log('Iniciando sesión con:', { email, password });
-  };
+    setError(null);
+    setIsLoading(true);
 
-  const handleRecoverySubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Enviando correo de recuperación a:', email);
+    setTimeout(() => {
+      if (correo === "admin@rosatel.com" && password === "admin2026") {
+        
+        router.push("/modules/admin-module/dashboard");
+        
+      } else {
+        setError("El correo o la contraseña son incorrectos. Inténtalo de nuevo.");
+        setIsLoading(false);
+      }
+    }, 1200); 
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 px-4">
-      <div className="max-w-md w-full space-y-8 bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 transition-all duration-300">
-        <div className="text-center">
-          <h2 className="text-3xl font-extrabold text-white tracking-tight">
-            Rosatel <span className="text-red-500">Admin</span>
-          </h2>
-          <p className="mt-2 text-sm text-gray-400">
-            {isRecovering 
-              ? 'Ingresa tu correo para restablecer tu cuenta' 
-              : 'Panel de Control de Administrador'}
-          </p>
+    <div className="flex min-h-screen items-center justify-center bg-slate-950 p-4 text-white">
+      <div className="w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl p-8 shadow-2xl">
+        
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-extrabold text-red-500 tracking-wide">Rosatel Admin</h2>
+          <p className="text-sm text-slate-400 mt-2">Control de Gestión v1.0</p>
         </div>
 
-        {!isRecovering ? (
-          <form className="mt-8 space-y-6" onSubmit={handleLoginSubmit}>
-            <div className="rounded-md space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">
-                  Correo Electrónico
-                </label>
-                <input
-                  type="email"
-                  required
-                  className="appearance-none relative block w-full px-3 py-2 border border-gray-600 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent sm:text-sm"
-                  placeholder="admin@rosatel.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">
-                  Contraseña
-                </label>
-                <input
-                  type="password"
-                  required
-                  className="appearance-none relative block w-full px-3 py-2 border border-gray-600 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent sm:text-sm"
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </div>
-            </div>
-
-            <div className="flex items-center justify-end text-sm">
-              <button
-                type="button"
-                className="font-medium text-red-400 hover:text-red-300 transition-colors"
-                onClick={() => {
-                  setIsRecovering(true);
-                  setPassword(''); 
-                }}
-              >
-                ¿Olvidaste tu contraseña?
-              </button>
-            </div>
-
-            <div>
-              <button
-                type="submit"
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-red-500 transition-colors"
-              >
-                Ingresar al Panel
-              </button>
-            </div>
-          </form>
-        ) : (
-          <form className="mt-8 space-y-6" onSubmit={handleRecoverySubmit}>
-            <div>
-              <label className="block text-sm font-medium text-gray-300 mb-1">
-                Correo Electrónico Administrativo
-              </label>
-              <input
-                type="email"
-                required
-                className="appearance-none relative block w-full px-3 py-2 border border-gray-600 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent sm:text-sm"
-                placeholder="admin@rosatel.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-
-            <div className="space-y-3">
-              <button
-                type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-gray-400 transition-colors"
-              >
-                Enviar correo de verificación
-              </button>
-              
-              <button
-                type="button"
-                className="w-full text-center text-sm font-medium text-gray-400 hover:text-white transition-colors"
-                onClick={() => setIsRecovering(false)}
-              >
-                Volver al Login
-              </button>
-            </div>
-          </form>
+        {error && (
+          <div className="mb-4 bg-rose-500/10 border border-rose-500/20 text-rose-400 p-3 rounded-xl text-xs font-medium animate-in fade-in duration-200">
+            ⚠️ {error}
+          </div>
         )}
+
+        <form onSubmit={handleLogin} className="space-y-5">
+          <div>
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
+              Correo Electrónico
+            </label>
+            <input
+              type="email"
+              required
+              placeholder="ejemplo@rosatel.com"
+              value={correo}
+              onChange={(e) => setCorreo(e.target.value)}
+              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">
+              Contraseña
+            </label>
+            <input
+              type="password"
+              required
+              placeholder="••••••••"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition"
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded-xl text-sm font-bold transition shadow-lg shadow-red-600/20 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed mt-2"
+          >
+            {isLoading ? "Autenticando..." : "Ingresar al Panel"}
+          </button>
+        </form>
+
       </div>
     </div>
   );
