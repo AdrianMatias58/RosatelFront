@@ -27,17 +27,13 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
+import { catalog } from "@/app/(usuario)/data/catalog";
+import { LocationSelector } from "@/app/(usuario)/components/LocationSelector";
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navItems = [
-    { label: "Prime", href: "/prime" },
-    { label: "Home", href: "/home" },
-    { label: "Forever", href: "/forever" },
-    { label: "Memories", href: "/memories" },
-    { label: "Ocasiones", href: "/ocasiones" },
-    { label: "Delivery 1 hora", href: "/delivery1hora" },
-  ];
+  const { items: navItems, destacado, promociones, menu: menuItems } = catalog.navegacion;
 
   return (
     <header className="sticky top-0 z-50 bg-white">
@@ -125,8 +121,8 @@ export function Header() {
         <div className="max-w-[1400px] mx-auto px-3 md:px-5 pt-[3px] pb-4 flex items-center justify-between gap-4">
           {/* Left - Location */}
           <div className="flex-1 flex items-center justify-start">
-            <div className="hidden md:flex items-center gap-2">
-              <button className="px-2.5 py-1.5 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium text-black hover:bg-gray-100 transition flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-4">
+              <button className="h-[42px] px-3 bg-gray-50 border border-gray-200 rounded-xl text-sm font-medium text-black hover:bg-gray-100 transition flex items-center gap-2 shadow-sm">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="rounded-full overflow-hidden shrink-0 shadow-sm border border-gray-100">
                   <rect x="0" y="0" width="6.66" height="20" fill="#D91023" />
                   <rect x="6.66" y="0" width="6.66" height="20" fill="#FFFFFF" />
@@ -135,7 +131,8 @@ export function Header() {
                 <span>PE</span>
                 <ChevronDown className="w-4 h-4 text-gray-600" />
               </button>
-              <span className="text-xs text-gray-700">¿A dónde envías?</span>
+
+              <LocationSelector />
             </div>
           </div>
 
@@ -215,8 +212,11 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Link href="/promociones" className="block px-3 py-2 text-sm font-semibold text-red-600 hover:bg-red-50 rounded-lg transition">
-                Promociones
+              <Link
+                href={promociones.href}
+                className="block px-3 py-2 text-sm font-semibold text-red-600 hover:bg-red-50 rounded-lg transition"
+              >
+                {promociones.label}
               </Link>
             </nav>
           )}
@@ -235,116 +235,18 @@ export function Header() {
                       <ul className="w-[300px] gap-0 p-0 max-h-[550px] overflow-y-auto bg-[#fff5f5]">
                         <li>
                           <ul className="p-4 space-y-1">
-                            <li>
-                              <NavigationMenuLink asChild href="/ocasiones">
-                                <a className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors">
-                                  <span>Ocasiones</span>
-                                  <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </a>
-                              </NavigationMenuLink>
-                            </li>
-                            <li>
-                              <NavigationMenuLink asChild href="/cajas">
-                                <a className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors">
-                                  <span>Cajas</span>
-                                  <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </a>
-                              </NavigationMenuLink>
-                            </li>
-                            <li>
-                              <NavigationMenuLink asChild href="/ramos">
-                                <a className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors">
-                                  <span>Ramos</span>
-                                  <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </a>
-                              </NavigationMenuLink>
-                            </li>
-                            <li>
-                              <NavigationMenuLink asChild href="/arreglos">
-                                <a className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors">
-                                  <span>Arreglos</span>
-                                  <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </a>
-                              </NavigationMenuLink>
-                            </li>
-                            <li>
-                              <NavigationMenuLink asChild href="/plantas">
-                                <a className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors">
-                                  <span>Plantas</span>
-                                  <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </a>
-                              </NavigationMenuLink>
-                            </li>
-                            <li>
-                              <NavigationMenuLink asChild href="/condolencias">
-                                <a className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors">
-                                  <span>Condolencias</span>
-                                  <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </a>
-                              </NavigationMenuLink>
-                            </li>
-                            <li>
-                              <NavigationMenuLink asChild href="/peluches">
-                                <a className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors">
-                                  <span>Peluches</span>
-                                  <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </a>
-                              </NavigationMenuLink>
-                            </li>
-                            <li>
-                              <NavigationMenuLink asChild href="/chocolates">
-                                <a className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors">
-                                  <span>Chocolates</span>
-                                  <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </a>
-                              </NavigationMenuLink>
-                            </li>
-                            <li>
-                              <NavigationMenuLink asChild href="/tortas">
-                                <a className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors">
-                                  <span>Tortas y Desayunos</span>
-                                  <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </a>
-                              </NavigationMenuLink>
-                            </li>
-                            <li>
-                              <NavigationMenuLink asChild href="/complementos">
-                                <a className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors">
-                                  <span>Complementos</span>
-                                  <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </a>
-                              </NavigationMenuLink>
-                            </li>
-                            <li>
-                              <NavigationMenuLink asChild href="/vinos">
-                                <a className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors">
-                                  <span>Vinos y licores</span>
-                                  <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </a>
-                              </NavigationMenuLink>
-                            </li>
+                            {menuItems.map((item) => (
+                              <li key={item.href}>
+                                <NavigationMenuLink asChild href={item.href}>
+                                  <a className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-md transition-colors">
+                                    <span>{item.label}</span>
+                                    <svg className="w-4 h-4 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                    </svg>
+                                  </a>
+                                </NavigationMenuLink>
+                              </li>
+                            ))}
                           </ul>
                         </li>
                       </ul>
@@ -361,12 +263,18 @@ export function Header() {
                   {item.label}
                 </Link>
               ))}
-              <Link href="/diadelamadre" className="flex items-center px-4 py-1.5 bg-red-600 text-sm text-white hover:bg-white hover:text-red-600 hover:border-red-600 border-2 border-red-600 transition h-8">
-                Día de la Madre
+              <Link
+                href={destacado.href}
+                className="flex items-center px-4 py-1.5 bg-red-600 text-sm text-white hover:bg-white hover:text-red-600 hover:border-red-600 border-2 border-red-600 transition h-8"
+              >
+                {destacado.label}
               </Link>
             </div>
-            <Link href="/promociones" className="flex items-center px-2.5 py-1 border-2 border-red-600 rounded-full text-sm text-red-600 hover:bg-red-600 hover:text-white transition h-8">
-              Promociones
+            <Link
+              href={promociones.href}
+              className="flex items-center px-2.5 py-1 border-2 border-red-600 rounded-full text-sm text-red-600 hover:bg-red-600 hover:text-white transition h-8"
+            >
+              {promociones.label}
             </Link>
           </nav>
         </div>

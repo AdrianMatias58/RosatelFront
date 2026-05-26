@@ -6,22 +6,176 @@
         "cobertura": "Envíos disponibles en Lima Metropolitana y Callao.",
         "politica_envio": "Garantizamos la entrega en el rango horario seleccionado por el cliente."
     },
+    "home": {
+        "hero_banners": [
+            { "src": "/BannerEspeciales/bannerInicial-1.webp", "alt": "Banner principal 1" },
+            { "src": "/BannerEspeciales/bannerInicial-2.webp", "alt": "Banner principal 2" },
+            { "src": "/BannerEspeciales/bannerInicial-3.webp", "alt": "Banner principal 3" }
+        ],
+        "side_banner": {
+            "src": "/BannerEspeciales/bannerInicial-4.png",
+            "alt": "Banner lateral"
+        },
+        "mas_vendidos": {
+            "titulo": "Más Vendidos",
+            "href": "/mas-vendidos"
+        },
+        "promo_boxes": [
+            {
+                "titulo": "Arreglos Especiales",
+                "href": "/arreglos",
+                "variante": "large"
+            },
+            {
+                "titulo": "Ramos Elegantes",
+                "href": "/ramos",
+                "variante": "small"
+            },
+            {
+                "titulo": "Peluches Tiernos",
+                "href": "/peluches",
+                "variante": "small"
+            }
+        ]
+    },
+    "ocasiones_home": [
+        { "label": "Amor", "emoji": "💕", "slug": "amor" },
+        { "label": "Aniversario", "emoji": "💍", "slug": "aniversario" },
+        { "label": "Condolencias", "emoji": "🙏", "slug": "condolencias" },
+        { "label": "Cumpleaños", "emoji": "🎂", "slug": "cumpleanos" },
+        { "label": "Graduación", "emoji": "🎓", "slug": "graduacion" },
+        { "label": "Mejórate Pronto", "emoji": "💚", "slug": "mejorate-pronto" },
+        { "label": "Nacimientos", "emoji": "👶", "slug": "nacimientos" }
+    ],
+    "colecciones": [
+        {
+            "slug": "prime",
+            "title": "Rosatel Prime",
+            "bannerImg": "/BannerEspeciales/banner-prime.jpg",
+            "descripcion" : "En Rosatel, te presentamos nuestra línea Rosatel Prime, donde la elegancia y la exclusividad se unen para crear obras maestras naturales. Cada detalle, cada elemento, ha sido cuidadosamente seleccionado en cada uno de nuestros arreglos florales, para crear una experiencia única y sofisticada."
+        },
+        {
+            "slug": "home",
+            "title": "Rosatel Home",
+            "bannerImg": "/BannerEspeciales/banner-home.jpg",
+            "descripcion" : "En Rosatel, te presentamos nuestra línea de flores diseñada para decorar tu hogar con las flores naturales más hermosas llenas de frescura y color. ¡Descubre nuestra colección de arreglos florales y encuentra el perfecto para sorprender y encantar! Explora nuestras opciones de ramos de rosas, arreglos de flores, tulipanes, rosas, flores variadas y haz que tu regalo sea especial y único."
+        },
+        {
+            "slug": "forever",
+            "title": "Colección Forever",
+            "bannerImg": "/BannerEspeciales/banner-forever.jpg",
+            "descripcion" : "En Rosatel, descubre nuestra exclusiva gama de arreglos florales con rosas preservadas y flores secas. Ideales para ofrecer un toque de color, fragancia y belleza duradera. Impresiona con nuestros diseños únicos y memorables. Las flores preservadas, tratadas con un proceso especial, conservan su color, forma y frescura natural, garantizando una longevidad superior. Compra tus arreglos florales en línea en Rosatel."
+        },
+        {
+            "slug": "memories",
+            "title": "Colección Memories",
+            "bannerImg": "/BannerEspeciales/banner-memories.jpg",
+            "descripcion" : "Arreglos florales para expresar condolencias, afecto y admiración. Nuestras creaciones florales están diseñadas para transmitir sentimientos y emociones de manera elegante y significativa, permitiendo expresar tus sentimientos de forma auténtica y personalizada. Desde elegantes ramos de rosas y flores hasta delicados arreglos fúnebres, coronas, lágrimas, cruces, cada arreglo está cuidadosamente diseñado para reflejar la esencia de tus sentimientos y emociones en esta ocasión tan delicada."
+        },
+        {
+            "slug": "ocasiones",
+            "title": "Ocasiones Especiales",
+            "bannerImg": "/BannerEspeciales/banner-gift.jpg",
+            "descripcion" : "En nuestra categoría de ocasiones de la florería Rosatel, encontrarás arreglos florales, tulipanes, orquideas, rosas, chocolates y peluches únicos y especiales para cada momento y ocasión. Ya sea un cumpleaños, san valentín, bodas, graduaciones, aniversario o simplemente para demostrar todo tu amor y aprecio. Tenemos una amplia variedad de opciones para elegir. Ofrecemos desde ramos de rosas clásicos hasta arreglos de flores imponentes y coloridos. Todo diseñado por nuestros expertos floristas. Haz tu elección online o visítanos en nuestras tiendas y deja que tus flores hablen por sí solas en la ocasión más especial, con la calidad y elegancia de Rosatel."
+        },
+        {
+            "slug": "delivery1hora",
+            "title": "Delivery",
+            "bannerImg": "/BannerEspeciales/banner-delivery.png",
+            "descripcion" : "En Rosatel Lima, te ofrecemos el servicio de entregas programadas en rangos de 1 hora en productos seleccionados y solo para los distritos de San Miguel, Barranco, Jesús María, La Molina, Lince, Magdalena del Mar, Pueblo Libre, San Borja, San Isidro, Santa Anita, Santiago de Surco, Surquillo, y Miraflores. *Servicio de delivery externo."
+        },
+        {
+            "slug": "diadelamadre",
+            "title": "Día de la Madre",
+            "bannerImg": "/BannerEspeciales/banner-diamadre.png",
+            "descripcion" : "Celebra el amor más puro con nuestra colección especial de flores y regalos para el Día de la Madre 2026, creada para sorprender a mamá con detalles llenos de emoción, elegancia y cariño."
+
+        },
+        {
+            "slug": "promociones",
+            "title": "Promociones Exclusivas",
+            "bannerImg": "/BannerEspeciales/banner-promociones.jpg",
+            "descripcion" : "En Rosatel, descubre nuestra exclusiva gama de arreglos florales con rosas preservadas y flores secas. Ideales para ofrecer un toque de color, fragancia y belleza duradera. Impresiona con nuestros diseños únicos y memorables. Las flores preservadas, tratadas con un proceso especial, conservan su color, forma y frescura natural, garantizando una longevidad superior. Compra tus arreglos florales en línea en Rosatel."
+        },
+        {
+            "slug": "mas-vendidos",
+            "title": "Más Vendidos",
+            "bannerImg": "/BannerEspeciales/banner-default.jpg"
+        },
+        {
+            "slug": "arreglos",
+            "title": "Arreglos Especiales",
+            "bannerImg": "/BannerEspeciales/banner-default.jpg"
+        },
+        {
+            "slug": "ramos",
+            "title": "Ramos Elegantes",
+            "bannerImg": "/BannerEspeciales/banner-default.jpg"
+        }
+    ],
+    "pagina_default": {
+        "titulo": "Nuestros Productos",
+        "bannerImg": "/BannerEspeciales/banner-default.jpg"
+    },
+    "filtros": {
+        "ocasiones": ["Cumpleaños", "Amor", "Aniversario", "Graduación"],
+        "colores": ["Rojo", "Rosado", "Amarillo", "Crema"]
+    },
+    "navegacion": {
+        "items": [
+            { "label": "Prime", "href": "/prime" },
+            { "label": "Home", "href": "/home" },
+            { "label": "Forever", "href": "/forever" },
+            { "label": "Memories", "href": "/memories" },
+            { "label": "Ocasiones", "href": "/ocasiones" },
+            { "label": "Delivery 1 hora", "href": "/delivery1hora" }
+        ],
+        "destacado": {
+            "label": "Día de la Madre",
+            "href": "/diadelamadre"
+        },
+        "promociones": {
+            "label": "Promociones",
+            "href": "/promociones"
+        },
+        "menu": [
+            { "label": "Ocasiones", "href": "/ocasiones" },
+            { "label": "Cajas", "href": "/cajas" },
+            { "label": "Ramos", "href": "/ramos" },
+            { "label": "Arreglos", "href": "/arreglos" },
+            { "label": "Plantas", "href": "/plantas" },
+            { "label": "Condolencias", "href": "/condolencias" },
+            { "label": "Peluches", "href": "/peluches" },
+            { "label": "Chocolates", "href": "/chocolates" },
+            { "label": "Tortas y Desayunos", "href": "/tortas" },
+            { "label": "Complementos", "href": "/complementos" },
+            { "label": "Vinos y licores", "href": "/vinos" }
+        ]
+    },
     "categorias": [
         {
             "id": 1,
-            "nombreCategoria": "Rosas"
+            "nombreCategoria": "Rosas",
+            "slug": "rosas",
+            "emoji": "🌹"
         },
         {
             "id": 2,
-            "nombreCategoria": "Tulipanes"
+            "nombreCategoria": "Tulipanes",
+            "slug": "tulipanes",
+            "emoji": "🌷"
         },
         {
             "id": 3,
-            "nombreCategoria": "Peluches"
+            "nombreCategoria": "Peluches",
+            "slug": "peluches",
+            "emoji": "🧸"
         },
         {
             "id": 4,
-            "nombreCategoria": "Globos"
+            "nombreCategoria": "Globos",
+            "slug": "globos",
+            "emoji": "🎈"
         }
     ],
     "productos": [
@@ -29,28 +183,91 @@
             "id": 1,
             "id_categoria": 1,
             "nombre": "Caja de 12 Rosas Rojas Elegantes",
-            "precio": 149.00,
+            "precio": 149.0,
             "descripcion": "Hermoso arreglo de 12 rosas rojas seleccionadas de tallo largo, presentadas en nuestra exclusiva caja de diseño premium. Incluye tarjeta para dedicatoria.",
             "stock": 45,
-            "imagen_url": "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=500"
+            "imagen_url": "https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=500",
+            "destacado": true,
+            "mas_vendido": true,
+            "ventas": 210,
+            "ocasiones": ["Amor", "Aniversario"],
+            "colores": ["Rojo"],
+            "colecciones": ["prime", "forever", "ramos"]
         },
         {
             "id": 2,
             "id_categoria": 2,
             "nombre": "Florero con 10 Tulipanes Amarillos",
-            "precio": 189.00,
+            "precio": 189.0,
             "descripcion": "Elegante florero de vidrio importado que contiene 10 tulipanes amarillos frescos de la más alta calidad, acompañados de follaje fino.",
             "stock": 20,
-            "imagen_url": "https://images.unsplash.com/photo-1520763185298-1b434c919102?w=500"
+            "imagen_url": "https://images.unsplash.com/photo-1520763185298-1b434c919102?w=500",
+            "destacado": true,
+            "mas_vendido": false,
+            "ventas": 95,
+            "ocasiones": ["Cumpleaños", "Graduación"],
+            "colores": ["Amarillo"],
+            "colecciones": ["home", "arreglos"]
         },
         {
             "id": 3,
             "id_categoria": 3,
             "nombre": "Oso de Peluche Kodi con Lazo",
-            "precio": 79.00,
+            "precio": 79.0,
             "descripcion": "Suave oso de peluche gigante color marrón claro con un lazo satinado rojo. El compañero ideal para complementar cualquier ramo.",
             "stock": 60,
-            "imagen_url": "https://images.unsplash.com/photo-1559251606-c623743a6d76?w=500"
+            "imagen_url": "https://images.unsplash.com/photo-1559251606-c623743a6d76?w=500",
+            "destacado": true,
+            "mas_vendido": true,
+            "ventas": 180,
+            "ocasiones": ["Amor", "Cumpleaños"],
+            "colores": ["Crema"],
+            "colecciones": ["peluches", "promociones"]
+        },
+        {
+            "id": 4,
+            "id_categoria": 1,
+            "nombre": "Ramo de 24 Rosas Rosadas Premium",
+            "precio": 219.0,
+            "descripcion": "Impresionante ramo de 24 rosas rosadas de exportación con follaje decorativo y envoltorio premium.",
+            "stock": 30,
+            "imagen_url": "https://images.unsplash.com/photo-1561181280-a296d682aa9e?w=500",
+            "destacado": true,
+            "mas_vendido": true,
+            "ventas": 165,
+            "ocasiones": ["Amor", "Aniversario"],
+            "colores": ["Rosado"],
+            "colecciones": ["forever", "memories", "diadelamadre"]
+        },
+        {
+            "id": 5,
+            "id_categoria": 4,
+            "nombre": "Globos Corazón y Rosas",
+            "precio": 99.0,
+            "descripcion": "Combinación festiva de globos en forma de corazón con detalle floral para celebraciones especiales.",
+            "stock": 40,
+            "imagen_url": "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500",
+            "destacado": false,
+            "mas_vendido": false,
+            "ventas": 72,
+            "ocasiones": ["Cumpleaños"],
+            "colores": ["Rojo", "Rosado"],
+            "colecciones": ["ocasiones"]
+        },
+        {
+            "id": 6,
+            "id_categoria": 1,
+            "nombre": "Combo Rosas y Ferrero Rocher",
+            "precio": 129.9,
+            "descripcion": "Ramo compacto de rosas rojas acompañado de una caja de chocolates Ferrero Rocher.",
+            "stock": 55,
+            "imagen_url": "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500",
+            "destacado": true,
+            "mas_vendido": true,
+            "ventas": 240,
+            "ocasiones": ["Amor", "Aniversario", "Cumpleaños"],
+            "colores": ["Rojo"],
+            "colecciones": ["promociones", "delivery1hora", "mas-vendidos"]
         }
     ],
     "paquetes_promociones": [
@@ -58,7 +275,7 @@
             "id": 1,
             "nombre": "Combo Amor Perfecto (Rosas + Peluche)",
             "descripcion": "La combinación ideal para aniversarios. Incluye la Caja de 12 Rosas Rojas y el Oso de Peluche Kodi por un precio especial de campaña.",
-            "precio_combo": 199.00,
+            "precio_combo": 199.0,
             "imagen_url": "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=500",
             "activo": 1,
             "fecha_expiracion": "2026-12-31"
@@ -68,7 +285,7 @@
         {
             "id": 1,
             "codigo": "ROSAS20",
-            "cantidadDescuento": 0.20,
+            "cantidadDescuento": 0.2,
             "descripcion": "20% de descuento en la categoría de rosas",
             "activo": 1
         }
@@ -96,11 +313,7 @@
         ]
     },
     "opciones_checkout_frontend": {
-        "metodos_pago_permitidos": [
-            "Tarjeta",
-            "Yape",
-            "PagoEfectivo"
-        ],
+        "metodos_pago_permitidos": ["Tarjeta", "Yape", "PagoEfectivo"],
         "horarios_entrega_disponibles": [
             "9:00 AM - 1:00 PM (Mañana)",
             "2:00 PM - 6:00 PM (Tarde)",
